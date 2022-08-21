@@ -16,7 +16,7 @@ session = Session()
 def searching_publisher_name():
     query_join = session.query(Shop).join(Stock).join(Book).join(Publisher)
     query_publisher_name = input('Введите имя (name) издателя: ')
-    query_result = query_join.filter(Publisher.name == query_publisher_name)
+    query_result = query_join.filter(Publisher.publisher_name == query_publisher_name)
     for result in query_result.all():
         print(f'Издатель "{query_publisher_name}" найден в магазине "{result.name}" с идентификатором {result.id}')
 
@@ -24,7 +24,7 @@ def searching_publisher_name():
 def searching_publisher_id():
     query_join = session.query(Shop).join(Stock).join(Book).join(Publisher)
     query_publisher_name = input('Введите идентификатор (id) издателя: ')
-    query_result = query_join.filter(Publisher.id == query_publisher_name)
+    query_result = query_join.filter(Publisher.id_publisher == query_publisher_name)
     for result in query_result.all():
         print(
             f'Издатель c id: {query_publisher_name} найден в магазине "{result.name}" '
