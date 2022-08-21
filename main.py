@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from models import Publisher, Book, Shop, Stock, Sale
 
 
-Base = sqlalchemy.declarative_base()
+Base = declarative_base()
 
 DSN = "postgresql://postgres:wsxzaq!1@localhost:5432/HomeWork6"
 engine = sqlalchemy.create_engine(DSN)
